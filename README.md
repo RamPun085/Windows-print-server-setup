@@ -36,32 +36,42 @@ This guide provides complete, step-by-step instructions to install and configure
 
 ---
 
-## ✅ Step 3: Add the Printer
+## ✅ Step 3: Install Printer Driver (Before Adding the Printer)
 
 1. Open **Print Management Console**  
    (`Win + R` → `printmanagement.msc`)
-2. Expand **Print Servers** → Your Server → Right-click **Printers** → `Add Printer`
-3. Select one of:
-   - `Add a new TCP/IP or Web Services printer by IP address or hostname`
-   - `Add a new printer using an existing port`
-4. Enter the IP or choose port
-5. Install or provide the correct driver
-6. Name the printer (e.g., `HP_LaserJet_3rdFloor`)
-7. Choose to **Share the printer**
-8. Print a test page to confirm installation
+2. Expand **Print Servers** → Your Server → Right-click **Drivers** → Select **Add Driver**
+3. Follow the wizard:
+   - Select **x64** or **x86** platform
+   - Choose manufacturer/model OR click **Have Disk** to provide `.inf` file
+4. Complete the wizard to install the driver
 
 ---
 
-## ✅ Step 4: Set Printer Permissions (Optional)
+## ✅ Step 4: Add the Printer
 
-1. Right-click printer → `Printer Properties` → `Security` tab
+1. Still in **Print Management**, right-click **Printers** → Select **Add Printer**
+2. Choose one of:
+   - `Add a new TCP/IP or Web Services printer by IP address or hostname`
+   - `Add a new printer using an existing port`
+3. Enter the IP address or choose the correct port
+4. Select the driver you installed in Step 3
+5. Name the printer (e.g., `HP_LaserJet_3rdFloor`)
+6. Choose to **Share the printer**
+7. Print a test page to confirm installation
+
+---
+
+## ✅ Step 5: Set Printer Permissions (Optional)
+
+1. Right-click the printer → `Printer Properties` → `Security` tab
 2. Set access:
    - Users: **Print**
    - Admins: **Manage Printers**, **Manage Documents**
 
 ---
 
-## ✅ Step 5: Deploy via Group Policy (Optional)
+## ✅ Step 6: Deploy via Group Policy (Optional)
 
 1. In **Print Management**, right-click the printer → `Deploy with Group Policy`
 2. Choose an existing or new **GPO**
@@ -72,7 +82,7 @@ This guide provides complete, step-by-step instructions to install and configure
 
 ---
 
-## ✅ Step 6: Test from a Client Machine
+## ✅ Step 7: Test from a Client Machine
 
 - Run `gpupdate /force` (optional)
 - Open **Devices and Printers** → Confirm the printer is visible
